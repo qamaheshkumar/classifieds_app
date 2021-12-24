@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-c1cg^-j%2l-e_-(0+ey030&yvz@^k$x@%w0pwgm#of%)qrqe+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', ' 55mahesh.pythonanywhere.com']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'corsheaders',
+    # 'api'
 
 ]
 
@@ -61,9 +62,9 @@ ROOT_URLCONF = 'ads.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')
-        ],
+        # 'DIRS': [
+        #     os.path.join(BASE_DIR, 'frontend/build')
+        # ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,9 +143,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATICFILES_DIRS = [
-     os.path.join(BASE_DIR, 'frontend/build/static')
-]
+# STATICFILES_DIRS = [
+#      os.path.join(BASE_DIR, 'static')
+# ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CORS_ORIGIN_WHITELIST = [
 
@@ -154,8 +157,8 @@ CORS_ORIGIN_WHITELIST = [
 
 
 print(BASE_DIR)
-MEDIA_URL = "/media/"
-print('MEDIA_URL => '+ str(MEDIA_URL))
+# MEDIA_URL = "/media/"
+# print('MEDIA_URL => '+ str(MEDIA_URL))
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 print('MEDIA_ROOT => '+ str(MEDIA_ROOT))
