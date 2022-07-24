@@ -25,7 +25,7 @@ SECRET_KEY = '-c1cg^-j%2l-e_-(0+ey030&yvz@^k$x@%w0pwgm#of%)qrqe+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', ' 55mahesh.pythonanywhere.com']
+# ALLOWED_HOSTS = ['*', 'janathads.com', 'localhost', ' 55mahesh.pythonanywhere.com']
 
 
 # Application definition
@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
 ]
 
 ROOT_URLCONF = 'ads.urls'
@@ -93,10 +94,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'classifieds',
+        # 'USER': 'janathads',
+        # 'PASSWORD': 'Sudarshan@123',
+        # 'HOST': '129.154.226.8',
+        # 'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': "",
-        'HOST': "",
-        'PORT': "",
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',        
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
@@ -140,19 +145,32 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static_files/'
 
 
 # STATICFILES_DIRS = [
 #      os.path.join(BASE_DIR, 'static')
 # ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
+ALLOWED_HOSTS=['*']
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOWED_ORIGINS = ['*']
+CORS_ORIGIN_WHITELIST = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = ['*']
+# CORS_ALLOW_CREDENTIALS = False
+
+# ALLOWED_HOSTS = ['*', 'janathads.com', 'localhost', ' 55mahesh.pythonanywhere.com']
+CORS_ALLOWED_ORIGINS = ['*', 'janathads.com', 'localhost', ' 55mahesh.pythonanywhere.com']
 
 CORS_ORIGIN_WHITELIST = [
-
     "http://localhost:3000",
-
+    # "https://www.janathads.com",
+    # "https://www.janathads.com/api/classified-list/"
 ]
 
 

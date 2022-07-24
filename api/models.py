@@ -83,6 +83,7 @@ class Classified(models.Model):
   users_id = models.ForeignKey(Users, to_field='id', related_name='Classified', on_delete=models.CASCADE) # Important : custom mapping of primary key to foreign key
   # users_id = models.IntegerField()
   phone_number = models.CharField(max_length=10, null=True)
+  ads_expire_day = models.IntegerField(default=0)
   created_at = models.DateTimeField(auto_now=True)
   updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
 

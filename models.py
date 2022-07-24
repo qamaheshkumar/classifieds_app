@@ -28,6 +28,7 @@ class Classified(models.Model):
     state = models.CharField(max_length=30)
     district = models.CharField(max_length=30)
     zip_code = models.IntegerField()
+    ad_expire_day = models.IntegerField()
     users_id = models.ForeignKey(Users, to_field='id', related_name='Classified', on_delete=models.CASCADE) # Important : custom mapping of primary key to foreign key
     # users_id = models.IntegerField()
     created_at = models.DateField()
