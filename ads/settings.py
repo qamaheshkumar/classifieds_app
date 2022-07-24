@@ -94,14 +94,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'classifieds',
-        # 'USER': 'janathads',
-        # 'PASSWORD': 'Sudarshan@123',
-        # 'HOST': '129.154.226.8',
-        # 'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',        
+        'USER': 'janathads',
+        'PASSWORD': 'Sudarshan@123',
+        'HOST': '129.154.226.8',
+        'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
@@ -167,11 +163,11 @@ CORS_ALLOW_ALL_ORIGINS = True
 # ALLOWED_HOSTS = ['*', 'janathads.com', 'localhost', ' 55mahesh.pythonanywhere.com']
 CORS_ALLOWED_ORIGINS = ['*', 'janathads.com', 'localhost', ' 55mahesh.pythonanywhere.com']
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    # "https://www.janathads.com",
-    # "https://www.janathads.com/api/classified-list/"
-]
+# CORS_ORIGIN_WHITELIST = [
+#     "http://localhost:3000",
+#     "https://www.janathads.com",
+#     "https://www.janathads.com/api/classified-list/"
+# ]
 
 
 print(BASE_DIR)
